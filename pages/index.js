@@ -1,32 +1,29 @@
 import Head from "next/head";
 import Link from "next/link";
-
+import Layout, { siteTitle } from "../components/Layout";
+import utilStyles from '../styles/utils.module.css';
 export default function Home() {
   return (
-    <div className='container'>
+    <Layout home>
       <Head>
-        <title>Create Next App</title>
-        <link rel='icon' href='/favicon.ico' />
+        <title>{siteTitle}</title>
       </Head>
-
-      <main>
+    <section className={utilStyles.headingMd}>
+      <p>Hi~~~</p>
+      <p>
+          (This is a sample website - you’ll be building a site like this on{' '}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+        </p>
+    </section>
+      {/* <main>
         <h1 className='title'>
           Read {""}
           <Link href="/posts/first-post">
             <a>this page!</a>
           </Link>
         </h1>
-      </main>
+      </main> */}
 
-      <footer>
-        <a
-          href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Powered by <img src='/vercel.svg' alt='Vercel' className='logo' />
-        </a>
-      </footer>
 
       <style jsx>{`
         .container {
@@ -47,24 +44,7 @@ export default function Home() {
           align-items: center;
         }
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+       
 
         a {
           color: inherit;
@@ -173,6 +153,6 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
+    </Layout>
   );
 }
